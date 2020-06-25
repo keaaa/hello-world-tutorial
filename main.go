@@ -2,18 +2,16 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
+
+	"github.com/keaaa/hello-world-tutorial/handlers"
 )
 
 const addr = ":8000"
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "Hello world! How are you doing?")
-		fmt.Println("endpoint hello world hit")
-	})
+	http.HandleFunc("/", handlers.HelloWorld)
 
 	fmt.Printf("starting server at %s \n", addr)
-	log.Fatal(http.ListenAndServe(addr, nil))
+	http.ListenAndServe(addr, nil)
 }
