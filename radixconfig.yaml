@@ -1,0 +1,16 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: keaaa-hello-world
+spec:
+  environments:
+    - name: dev
+      build:
+        from: master
+  components:
+    - name: server
+      src: .
+      ports:
+        - name: http
+          port: 8000
+      publicPort: http
