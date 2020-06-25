@@ -10,7 +10,7 @@ const addr = ":8000"
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "Hello world!")
+		fmt.Fprintln(w, "Hello world! How are you doing?")
 		fmt.Println("endpoint hello world hit")
 	})
 
