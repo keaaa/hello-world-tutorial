@@ -14,3 +14,10 @@ spec:
         - name: http
           port: 8000
       publicPort: http
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "50m"
+        limits:
+          memory: "64Mi"
+          cpu: "1000m"
